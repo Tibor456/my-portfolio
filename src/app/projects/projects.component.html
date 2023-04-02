@@ -1,0 +1,40 @@
+<div class="image-gallery">
+  <div
+    #imageTrack
+    id="image-track"
+    data-mouse-down-at="0"
+    data-prev-percentage="0"
+    (mousedown)="handleOnDown($event)"
+    (touchstart)="handleOnDown($event.touches[0])"
+    (mouseup)="handleOnUp()"
+    (touchend)="handleOnUp()"
+    (mousemove)="handleOnMove($event)"
+    (touchmove)="handleOnMove($event.touches[0])"
+  >
+  <img
+  (click)="onImageClick($event)"
+  class="image"
+  src="assets/project2.png"
+  data-url="https://main.d336mv6jjiaytv.amplifyapp.com/"
+  draggable="false"
+/>
+
+    <img
+      (click)="onImageClick($event)"
+      class="image"
+      src="assets/project3.png"
+      draggable="false"
+      data-url="https://main.d19eglh7vdjn7g.amplifyapp.com/"
+    />
+    <img
+      (click)="onImageClick($event)"
+      class="image"
+      src="assets/project4.png"
+      draggable="false"
+      data-url="https://master.d25mu23v23vken.amplifyapp.com/"
+    />
+  </div>
+</div>
+
+  
+  

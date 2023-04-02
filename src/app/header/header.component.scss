@@ -1,0 +1,126 @@
+// Variables for colors and dimensions
+$nav-text-color: #34495e;
+$nav-text-hover-color: #2c3e50;
+$nav-height: 70px;
+$nav-font-size: 1.1rem;
+$animation-duration: 0.3s;
+$breakpoint: 768px;
+
+// Variables for the mobile menu button
+$menu-button-color: #34495e;
+$menu-button-hover-color: #2c3e50;
+$menu-button-width: 24px;
+$menu-button-height: 3px;
+$menu-button-spacing: 5px;
+
+// Mixin for hover effects
+@mixin hover-effect {
+  transition: background-color $animation-duration ease-in-out, color $animation-duration ease-in-out;
+  &:hover {
+    background-color: rgba($nav-text-hover-color, 0.1);
+    color: $nav-text-hover-color;
+  }
+}
+
+// Main header and nav styles
+header {
+  background-color: transparent;
+  height: $nav-height;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 30px;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      height: 100%;
+     justify-content: center;
+
+      li {
+        margin: 0 15px;
+
+        a {
+          text-decoration: none;
+          color: $nav-text-color;
+          font-size: $nav-font-size;
+          font-weight: 500;
+          letter-spacing: 1px;
+          padding: 8px 12px;
+          border-radius: 4px;
+          @include hover-effect;
+        }
+      }
+    }
+  }
+}
+
+// Add styles for the mobile menu button
+.menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: $menu-button-width;
+  height: ($menu-button-height * 3) + ($menu-button-spacing * 2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    .menu-button-line {
+      background-color: $menu-button-hover-color;
+    }
+  }
+
+  .menu-button-line {
+    width: 100%;
+    height: $menu-button-height;
+    background-color: $menu-button-color;
+    transition: background-color $animation-duration ease-in-out;
+  }
+}
+
+// Responsive behavior
+@media (max-width: $breakpoint) {
+  .menu-button {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: $nav-height;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    width: 100%; // Add this line to make the menu full-width
+
+    li {
+      margin: 10px 0;
+      width: 100%; // Add this line to make the links full-width
+      text-align: center; // Add this line to center the text
+    }
+
+    a {
+      display: block; // Add this line to make the links fill the entire li element
+      padding: 8px 0; // Add this line to add padding to the links
+    }
+
+    .menu-active {
+    display: flex;
+    }
+  }}

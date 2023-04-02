@@ -1,0 +1,27 @@
+#about {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.about-box {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 1s forwards;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@keyframes slideIn {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,16 @@
+<header>
+  <nav>
+    <button class="menu-button" (click)="toggleMenu()">
+      <span class="menu-button-line"></span>
+      <span class="menu-button-line"></span>
+      <span class="menu-button-line"></span>
+    </button>
+    <ul [ngClass]="{'menu-active': menuActive}">
+      <li><a href="#about" routerLink="/#about" (click)="scrollTo('about')">About</a></li>
+      <li><a href="#projects" routerLink="/#projects" (click)="scrollTo('projects')">Projects</a></li>
+      <li><a href="#contact" routerLink="/#contact"(click)="scrollTo('contact')">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
